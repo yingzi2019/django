@@ -1,22 +1,21 @@
-[build-system]
-requires = ["setuptools>=75.8.1"]
-build-backend = "setuptools.build_meta"
-
 [project]
-name = "Django"
+name = "django"
 dynamic = ["version"]
-requires-python = ">= 3.12"
+requires-python = "==3.12.*"
 dependencies = [
     "asgiref>=3.8.1",
     "sqlparse>=0.5.0",
     "tzdata; sys_platform == 'win32'",
+    "django-extensions>=4.1",
+    "ipython>=9.2.0",
 ]
 authors = [
-  {name = "Django Software Foundation", email = "foundation@djangoproject.com"},
+    {name = "Django Software Foundation", email = "foundation@djangoproject.com"},
+    {name = "monkey", email = "54906337+yingzi2019@users.noreply.github.com"},
 ]
-description = "A high-level Python web framework that encourages rapid development and clean, pragmatic design."
-readme = "README.rst"
-license = {text = "BSD-3-Clause"}
+description = "Default template for PDM package"
+readme = "README.md"
+license = {text = "MIT"}
 classifiers = [
     "Development Status :: 2 - Pre-Alpha",
     "Environment :: Web Environment",
@@ -35,6 +34,7 @@ classifiers = [
     "Topic :: Software Development :: Libraries :: Application Frameworks",
     "Topic :: Software Development :: Libraries :: Python Modules",
 ]
+version = "0.1.0"
 
 [project.optional-dependencies]
 argon2 = ["argon2-cffi>=23.1.0"]
@@ -65,3 +65,6 @@ version = {attr = "django.__version__"}
 
 [tool.setuptools.packages.find]
 include = ["django*"]
+
+[tool.pdm]
+distribution = false
